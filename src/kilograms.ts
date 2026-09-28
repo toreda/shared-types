@@ -24,8 +24,8 @@
  */
 
 /**
- * Expressive Alias for values expressing units of electric capacitance in Ohms.
+ * Expressive Alias for mass values expressed in Kilograms (Metric).
  *
- * @category Expressive Types - Units of Measurement (Scientific)
+ * @category Expressive Types - Units of Measurement (Metric)
  */
 export type Kilograms = number;

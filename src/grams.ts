@@ -24,8 +24,8 @@
  */
 
 /**
- * Expressive Alias for values expressed in Grams (Imperial).
+ * Expressive Alias for mass values expressed in Grams (Metric).
  *
- * @category Expressive Types - Imperial Units
+ * @category Expressive Types - Units of Measurement (Metric)
  */
 export type Grams = number;

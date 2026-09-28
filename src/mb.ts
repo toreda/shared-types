@@ -24,7 +24,7 @@
  */
 
 /**
- * Expressive Alias for data values expressed in abbreviated Gigabytes (GB).
+ * Expressive Alias for data values expressed in abbreviated Megabytes (MB).
  *
  * @category Expressive Types - Data Units
  */

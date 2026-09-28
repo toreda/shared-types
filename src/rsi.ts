@@ -24,8 +24,9 @@
  */
 
 /**
- * Expressive Alias for values expressed in RSI (Imperial).
+ * Expressive Alias for thermal resistance values expressed in RSI, the SI (metric) R-value,
+ * measured in square meter kelvins per watt (m²·K/W).
  *
- * @category Expressive Types - Imperial Units
+ * @category Expressive Types - Units of Measurement (Scientific)
  */
 export type RSI = number;

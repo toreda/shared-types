@@ -1,5 +1,16 @@
 ## [Unreleased]
 
+### Fixed
+
+-   Package can now be loaded at runtime from plain Node. 3.0.0 published ESM syntax with extensionless specifiers under a CommonJS `main`, so `require('@toreda/shared-types')` failed with `ERR_MODULE_NOT_FOUND` (Node 22+) or `SyntaxError: Unexpected token 'export'` (older Node).
+-   Incorrect doc comments: `Kilograms` described Ohms, `MB` described Gigabytes, `Grams` was labelled Imperial, `Ohms` described capacitance instead of resistance, and `RSI` was labelled Imperial instead of SI thermal resistance. `TypeValueTest` had no doc comment, so the API docs showed the license header. Categories for `Grams`, `Kilograms` and `RSI` corrected to match.
+
+### Changed
+
+-   Package now ships dual builds: CommonJS in `dist/cjs` and ESM in `dist/esm`, each with a `package.json` marking its module type. Root `package.json` adds `module` and an `exports` map with `types`, `import` and `require` conditions. Deep imports into `dist/` are no longer exposed.
+-   Build compiles with `tsc` (`tsconfig.cjs.json`, `tsconfig.esm.json`) instead of `esbuild`. A post-build step adds `.js` extensions to relative specifiers in the ESM `.js` and `.d.ts` output. `esbuild` and `esbuild-plugin-d.ts` removed from dev dependencies.
+-   `gulpfile.ts` uses `export default` so it loads under Node's native TypeScript type stripping as well as `ts-node`.
+
 ## [3.0.0] - 2026-05-12
 
 ### Breaking Changes
@@ -371,21 +382,23 @@
 
 -   No changelog for release.
 
-[unreleased]: https://github.com/toreda/shared-types/releases/compare/v3.0.0...HEAD
-[3.0.0]: https://github.com/toreda/shared-types/releases/compare/v2.16.0...v3.0.0
-[2.16.0]: https://github.com/toreda/shared-types/releases/compare/v2.15.0...v2.16.0
-[2.15.0]: https://github.com/toreda/shared-types/releases/compare/v2.14.0...v2.15.0
-[2.14.0]: https://github.com/toreda/shared-types/releases/compare/v2.13.1...v2.14.0
-[2.13.1]: https://github.com/toreda/shared-types/releases/compare/v2.13.0..v2.13.1
-[2.13.0]: https://github.com/toreda/types/releases/compare/v2.10.1...v2.13.0
-[2.10.1]: https://github.com/toreda/types/releases/compare/v2.10.0...v2.10.1
-[2.10.0]: https://github.com/toreda/types/releases/compare/v2.8.0...v2.10.0
-[2.8.0]: https://github.com/toreda/types/releases/compare/v2.7.0...v2.8.0
-[2.7.0]: https://github.com/toreda/types/releases/compare/v2.6.0...v2.7.0
-[2.6.0]: https://github.com/toreda/types/releases/compare/v2.5.0...v2.6.0
-[2.5.0]: https://github.com/toreda/types/releases/compare/v2.4.0...v2.5.0
-[2.4.1]: https://github.com/toreda/types/releases/compare/v2.4.0...v2.4.1
-[2.4.0]: https://github.com/toreda/types/releases/compare/v2.0.0...v2.4.0
-[2.0.0]: https://github.com/toreda/types/releases/compare/v1.2.2...v2.0.0
-[1.2.2]: https://github.com/toreda/types/releases/compare/v0.0.0...v1.2.2
-[0.0.0]: https://github.com/toreda/types/releases
+[Unreleased]: https://github.com/toreda/shared-types/compare/v3.0.0...HEAD
+[3.0.0]: https://github.com/toreda/shared-types/releases/tag/v3.0.0
+[2.16.0]: https://www.npmjs.com/package/@toreda/types/v/2.16.0
+[2.15.0]: https://www.npmjs.com/package/@toreda/types/v/2.15.0
+[2.14.0]: https://github.com/toreda/shared-types/compare/v2.13.1...v2.14.0
+[2.13.1]: https://github.com/toreda/shared-types/releases/tag/v2.13.1
+[2.13.0]: https://www.npmjs.com/package/@toreda/types/v/2.13.0
+[2.12.0]: https://www.npmjs.com/package/@toreda/types/v/2.12.0
+[2.11.0]: https://www.npmjs.com/package/@toreda/types/v/2.11.0
+[2.10.1]: https://github.com/toreda/shared-types/compare/v2.10.0...v2.10.1
+[2.10.0]: https://github.com/toreda/shared-types/compare/v.2.9.1...v2.10.0
+[2.9.1]: https://github.com/toreda/shared-types/compare/v2.8.0...v.2.9.1
+[2.8.0]: https://github.com/toreda/shared-types/compare/v2.7.0...v2.8.0
+[2.7.0]: https://github.com/toreda/shared-types/compare/v2.6.0...v2.7.0
+[2.6.0]: https://github.com/toreda/shared-types/releases/tag/v2.6.0
+[2.5.0]: https://www.npmjs.com/package/@toreda/types/v/2.5.0
+[2.4.1]: https://github.com/toreda/shared-types/releases/tag/v2.4.1
+[2.4.0]: https://www.npmjs.com/package/@toreda/types/v/2.4.0
+[2.0.0]: https://www.npmjs.com/package/@toreda/types/v/2.0.0
+[1.2.2]: https://github.com/toreda/shared-types/releases/tag/v1.2.2

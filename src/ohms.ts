@@ -24,7 +24,7 @@
  */
 
 /**
- * Expressive Alias for values expressing units of electric capacitance in Ohms.
+ * Expressive Alias for values expressing electrical resistance in Ohms.
  *
  * @category Expressive Types - Units of Measurement (Scientific)
  */
